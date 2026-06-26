@@ -1,0 +1,32 @@
+ # Python
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
+
+# DVC Cache
+.dvc/cache/
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment Variables
+.env
+
+# Models
+models/*.pkl
+models/*.joblib
