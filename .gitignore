@@ -1,6 +1,7 @@
  # Python
 __pycache__/
 *.py[cod]
+*.pyo
 
 # Virtual Environment
 .venv/
@@ -30,3 +31,6 @@ Thumbs.db
 # Models
 models/*.pkl
 models/*.joblib
+
+# DVC cache
+.dvc/cache/
