@@ -12,15 +12,24 @@ on:
       - master
 
 jobs:
-
   test:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Show Repository Structure
+        run: |
+          pwd
+          ls
+          ls -R
+
+      - name: Verify Dataset
+        run: |
+          echo "Checking data folder..."
+          ls -lh data
+          ls -lh data/raw
 
       - name: Install uv
         uses: astral-sh/setup-uv@v6
@@ -40,4 +49,4 @@ jobs:
         run: uv run pytest -v
 
       - name: Build Docker Image
-        run: docker build -t bank-churn-api . 
+        run: docker build -t bank-churn-api .
