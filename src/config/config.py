@@ -15,7 +15,11 @@ TRAIN_DATA = RAW_DATA_DIR / "train.csv"
 TARGET_COLUMN = "Exited"
 
 # Columns to Drop
-DROP_COLUMNS = ["id","CustomerId","Surname"]
+DROP_COLUMNS = [
+    "id",
+    "CustomerId",
+    "Surname"
+]
 
 # Random State
 RANDOM_STATE = 42
@@ -23,6 +27,8 @@ RANDOM_STATE = 42
 # Test Size
 TEST_SIZE = 0.2
 
+# Model Directory
 MODEL_DIR = PROJECT_ROOT / "models"
 
-MODEL_PATH = MODEL_DIR / "churn_pipeline.joblib"
+# Current Model
+MODEL_NAME = "xgboost"

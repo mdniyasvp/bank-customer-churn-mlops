@@ -4,15 +4,6 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 from src.models.registry import MODELS
 
-# -------------------------
-# Select Model
-# -------------------------
-
-MODEL_NAME = "logistic_regression"
-
-# -------------------------
-# Feature Lists
-# -------------------------
 
 categorical_features = [
     "Geography",
@@ -30,9 +21,6 @@ numerical_features = [
     "EstimatedSalary"
 ]
 
-# -------------------------
-# Preprocessor
-# -------------------------
 
 preprocessor = ColumnTransformer(
     transformers=[
@@ -49,13 +37,12 @@ preprocessor = ColumnTransformer(
     ]
 )
 
-# -------------------------
-# Model Pipeline
-# -------------------------
 
-model_pipeline = Pipeline(
-    steps=[
-        ("preprocessor", preprocessor),
-        ("classifier", MODELS[MODEL_NAME])
-    ]
-)
+def build_pipeline(model_name: str):
+
+    return Pipeline(
+        steps=[
+            ("preprocessor", preprocessor),
+            ("classifier", MODELS[model_name])
+        ]
+    )

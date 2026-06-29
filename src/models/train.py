@@ -1,82 +1,95 @@
+import time
+import joblib
+
 from sklearn.model_selection import train_test_split
+
+from src.config.config import (
+    RANDOM_STATE,
+    TEST_SIZE,
+    MODEL_DIR,
+    MODEL_NAME,
+)
+
 from src.data.loader import load_data
 from src.data.preprocessing import preprocess_data
-from src.config.config import RANDOM_STATE, TEST_SIZE
+from src.pipelines.model_pipeline import build_pipeline
 from src.models.evaluate import evaluate_model
+from src.utils.mlflow_logger import log_experiment
 
 def prepare_data():
     """
     Load data, preprocess it, and split into train/test sets.
     """
 
-    # Load raw data
     df = load_data()
 
-    # Preprocess
     X, y = preprocess_data(df)
 
-    # Train/Test split
     X_train, X_test, y_train, y_test = train_test_split(
         X,
         y,
         test_size=TEST_SIZE,
         random_state=RANDOM_STATE,
-        stratify=y
+        stratify=y,
     )
 
     return X_train, X_test, y_train, y_test
 
 
-from src.pipelines.model_pipeline import model_pipeline
+def main():
 
-...
-
-if __name__ == "__main__":
+    print("=" * 60)
+    print(f"Training Model : {MODEL_NAME}")
+    print("=" * 60)
 
     X_train, X_test, y_train, y_test = prepare_data()
 
-    model_pipeline.fit(X_train, y_train)
+    pipeline = build_pipeline(MODEL_NAME)
 
-    print("Pipeline training completed successfully!")
+    start_time = time.time()
 
-    print("Training Features :", X_train.shape)
-    print("Testing Features  :", X_test.shape)
-    print("Training Target   :", y_train.shape)
-    print("Testing Target    :", y_test.shape)
-    
-print("\nTraining Target Distribution")
-print(y_train.value_counts(normalize=True) * 100)
+    pipeline.fit(X_train, y_train)
 
-print("\nTesting Target Distribution")
-print(y_test.value_counts(normalize=True) * 100)
+    training_time = time.time() - start_time
 
-import joblib
-from pathlib import Path
+    metrics = evaluate_model(
+        pipeline,
+        X_test,
+        y_test,
+    )
 
-from src.config.config import MODEL_DIR, MODEL_PATH
-model_pipeline.fit(X_train, y_train)
+    MODEL_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
-metrics = evaluate_model(
-    model_pipeline,
-    X_test,
-    y_test
-)
+    model_path = MODEL_DIR / f"{MODEL_NAME}.joblib"
 
-print("\nTraining Complete")
-print("-" * 40)
+    joblib.dump(
+        pipeline,
+        model_path,
+    )
 
-for metric, value in metrics.items():
-    if isinstance(value, float):
-        print(f"{metric:<12}: {value:.4f}")
+    print("\n" + "=" * 60)
+    print("Training Summary")
+    print("=" * 60)
 
-MODEL_DIR.mkdir(
-    parents=True,
-    exist_ok=True
-)
+    print(f"Training Time : {training_time:.2f} seconds")
 
-joblib.dump(
-    model_pipeline,
-    MODEL_PATH
-)
+    for metric, value in metrics.items():
+        if isinstance(value, float):
+            print(f"{metric:<12}: {value:.4f}")
 
-print(f"\nModel saved to:\n{MODEL_PATH}")
+    print(f"\nModel saved to:\n{model_path}")
+
+    log_experiment(
+        model_name=MODEL_NAME,
+        model=pipeline,
+        metrics=metrics,
+        params={
+            "test_size": TEST_SIZE,
+            "random_state": RANDOM_STATE,
+        }
+    )
+if __name__ == "__main__":
+    main()

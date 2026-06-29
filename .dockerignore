@@ -1,0 +1,47 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+
+# Jupyter
+.ipynb_checkpoints
+notebooks/
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Logs
+logs/
+
+# Tests
+tests/
+
+# Documentation
+README.md
+LEARNINGS.md
+
+# DVC cache
+.dvc/cache
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+
+# Temporary files
+*.tmp
