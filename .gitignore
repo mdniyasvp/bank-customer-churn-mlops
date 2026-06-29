@@ -1,5 +1,6 @@
  # Python
 __pycache__/
+.pytest_cache
 *.py[cod]
 *.pyo
 
@@ -10,6 +11,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # MLflow
+mlflow.db
 mlruns/
 
 # DVC Cache
@@ -23,6 +25,7 @@ mlruns/
 Thumbs.db
 
 # Logs
+logs/
 *.log
 
 # Environment Variables
