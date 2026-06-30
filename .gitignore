@@ -33,7 +33,11 @@ logs/
 
 # Models
 models/*.pkl
+# Ignore all trained models
 models/*.joblib
+
+# Except the production model
+!models/xgboost.joblib
 
 # DVC cache
 .dvc/cache/

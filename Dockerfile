@@ -15,9 +15,9 @@ COPY api ./api
 COPY src ./src
 COPY models ./models
 
-RUN mkdir logs
-RUN useradd -m appuser
-RUN chown -R appuser:appuser /app
+RUN mkdir logs \
+    && useradd -m appuser \
+    && chown -R appuser:appuser /app
 
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
