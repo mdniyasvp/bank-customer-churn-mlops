@@ -11,20 +11,15 @@ PROCESSED_DATA_DIR = DATA_DIR / "processed"
 # Dataset
 TRAIN_DATA = RAW_DATA_DIR / "train.csv"
 
-# Target
 TARGET_COLUMN = "Exited"
 
-# Columns to Drop
 DROP_COLUMNS = [
     "id",
     "CustomerId",
     "Surname"
 ]
 
-# Random State
 RANDOM_STATE = 42
-
-# Test Size
 TEST_SIZE = 0.2
 
 # Model Directory
