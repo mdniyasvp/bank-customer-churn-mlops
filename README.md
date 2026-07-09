@@ -15,7 +15,7 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 This project is an **end-to-end Machine Learning Operations (MLOps) pipeline** for predicting whether a bank customer is likely to leave the bank (customer churn).
 
@@ -35,7 +35,7 @@ The application automatically compares multiple machine learning models and serv
 
 ---
 
-# 🚀 Live Demo
+#  Live Demo
 
 ### 🌐 Railway Deployment
 
@@ -45,13 +45,13 @@ The application automatically compares multiple machine learning models and serv
 https://bank-customer-churn-mlops-production.up.railway.app
 ```
 
-### 📚 Swagger Documentation
+###  Swagger Documentation
 
 ```
 https://bank-customer-churn-mlops-production.up.railway.app/docs
 ```
 
-### ❤️ Health Check
+###  Health Check
 
 ```
 https://bank-customer-churn-mlops-production.up.railway.app/health
@@ -61,23 +61,23 @@ https://bank-customer-churn-mlops-production.up.railway.app/health
 
 # ✨ Features
 
-- ✅ End-to-End Machine Learning Pipeline
-- ✅ Data Versioning using DVC
-- ✅ Experiment Tracking with MLflow
-- ✅ Logistic Regression Training
-- ✅ Random Forest Training
-- ✅ XGBoost Training
-- ✅ Automatic Best Model Selection
-- ✅ Model Serialization with Joblib
-- ✅ REST API using FastAPI
-- ✅ Request Validation using Pydantic
-- ✅ Structured Logging
-- ✅ Dockerized Application
-- ✅ GitHub Actions CI Pipeline
-- ✅ Railway Cloud Deployment
-- ✅ Swagger UI Documentation
-- ✅ Health Check Endpoint
-- ✅ Production-ready Project Structure
+-  End-to-End Machine Learning Pipeline
+-  Data Versioning using DVC
+-  Experiment Tracking with MLflow
+-  Logistic Regression Training
+-  Random Forest Training
+-  XGBoost Training
+-  Automatic Best Model Selection
+-  Model Serialization with Joblib
+-  REST API using FastAPI
+-  Request Validation using Pydantic
+-  Structured Logging
+-  Dockerized Application
+-  GitHub Actions CI Pipeline
+-  Railway Cloud Deployment
+-  Swagger UI Documentation
+-  Health Check Endpoint
+-  Production-ready Project Structure
 
 ---
 
@@ -298,11 +298,11 @@ This makes experiments reproducible and simplifies model comparison.
 
 ### MLflow Features
 
-- ✅ Experiment Tracking
-- ✅ Parameter Logging
-- ✅ Metric Logging
-- ✅ Model Artifacts
-- ✅ Run History
+-  Experiment Tracking
+-  Parameter Logging
+-  Metric Logging
+-  Model Artifacts
+-  Run History
 
 ---
 
@@ -472,7 +472,7 @@ tests/test_predict.py ....... PASSED
 
 ---
 
-# 🚀 Running the Project Locally
+#  Running the Project Locally
 
 Clone the repository:
 
