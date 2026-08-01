@@ -1,0 +1,13 @@
+.git
+.github
+.venv
+__pycache__
+.pytest_cache
+.ipynb_checkpoints
+mlruns
+mlflow.db
+notebooks
+reports
+logs
+data
+streamlit_app(without modularization(ui-folder)).py

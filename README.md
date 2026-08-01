@@ -1,8 +1,11 @@
 # 🏦 Bank Customer Churn Prediction
+<p align="center">
+    <img src="assets/banner.png" alt="Bank Customer Churn Prediction Banner" width="100%">
+</p>
 
 <div align="center">
 
-### End-to-End Machine Learning Application for Customer Churn Prediction
+### Production-Ready Machine Learning & MLOps Application for Customer Churn Prediction
 
 Predict whether a bank customer is likely to leave the bank using a production-ready Machine Learning pipeline built with **XGBoost**, **FastAPI**, and **Streamlit**.
 
