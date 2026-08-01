@@ -1,9 +1,13 @@
 import os
 import joblib
-
+import streamlit as st
 from ui.api_client import predict_customer
 from src.config.config import MODEL_DIR, MODEL_NAME
 
+PREDICTION_MODE = st.secrets.get(
+    "PREDICTION_MODE",
+    os.getenv("PREDICTION_MODE", "api"),
+)
 PREDICTION_MODE = os.getenv("PREDICTION_MODE", "api")
 
 
