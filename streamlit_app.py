@@ -36,8 +36,12 @@ if css_file.exists():
 
 # API Configuration
 
-API_URL = "http://127.0.0.1:8000/predict"
+import os
 
+API_URL = os.getenv(
+    "API_URL",
+    "http://127.0.0.1:8000/predict"
+)
 # Load Trained Pipeline
 
 MODEL_PATH = MODEL_DIR / f"{MODEL_NAME}.joblib"

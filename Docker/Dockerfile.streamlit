@@ -9,22 +9,15 @@ RUN pip install --no-cache-dir uv
 
 COPY pyproject.toml uv.lock ./
 
-RUN uv sync --frozen --no-dev
-
 COPY assets ./assets
 COPY ui ./ui
 COPY src ./src
+COPY api ./api
 COPY models ./models
 COPY streamlit_app.py .
 
+RUN uv sync --frozen --no-dev
+
 EXPOSE 8501
 
-CMD [
-    "uv",
-    "run",
-    "streamlit",
-    "run",
-    "streamlit_app.py",
-    "--server.port=8501",
-    "--server.address=0.0.0.0"
-]
+CMD ["uv", "run", "streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
