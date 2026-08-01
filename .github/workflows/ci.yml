@@ -55,6 +55,20 @@ jobs:
           ls -la docker
           cat docker/Dockerfile.api
 
+      - name: Verify Docker Directory
+        run: |
+          echo "Current directory:"
+          pwd
+
+          echo "Repository contents:"
+          ls -la
+
+          echo "Docker folder:"
+          ls -la docker
+
+          echo "Docker API file:"
+          cat docker/Dockerfile.api
+
       - name: Build FastAPI Docker Image
         run: docker build -f docker/Dockerfile.api -t bank-churn-api .
 
