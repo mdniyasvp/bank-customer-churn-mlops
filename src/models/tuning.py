@@ -25,15 +25,11 @@ def main():
     print("Hyperparameter Tuning")
     print("=" * 60)
 
-    # ------------------------
     # Load Data
-    # ------------------------
 
     X_train, X_test, y_train, y_test = prepare_data()
 
-    # ------------------------
-    # Build Pipeline
-    # ------------------------
+ 
 
     pipeline = build_pipeline(MODEL_NAME)
 
@@ -65,7 +61,6 @@ def main():
 
     # ------------------------
     # Grid Search
-    # ------------------------
 
     grid_search = GridSearchCV(
 

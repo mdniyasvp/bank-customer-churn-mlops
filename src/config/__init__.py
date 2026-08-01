@@ -1,0 +1,13 @@
+from .config import (
+    PROJECT_ROOT,
+    DATA_DIR,
+    RAW_DATA_DIR,
+    PROCESSED_DATA_DIR,
+    TRAIN_DATA,
+    TARGET_COLUMN,
+    DROP_COLUMNS,
+    RANDOM_STATE,
+    TEST_SIZE,
+    MODEL_DIR,
+    MODEL_NAME,
+)

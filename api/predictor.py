@@ -24,9 +24,11 @@ def predict(data: dict):
     try:
 
         df = pd.DataFrame([data])
-
+        print(df)
+        print(df.dtypes)
         prediction = model.predict(df)[0]
-
+        print("Prediction:", prediction)
+        print("Probability:", model.predict_proba(df))
         probability = float(
             model.predict_proba(df)[0][1]
         )

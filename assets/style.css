@@ -1,0 +1,124 @@
+/* ------------------------------------------------ */
+/* Background */
+/* ------------------------------------------------ */
+
+.stApp{
+    background:#F4F7FC;
+}
+
+/* ------------------------------------------------ */
+/* Hero Card */
+/* ------------------------------------------------ */
+
+.hero{
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);
+    padding:30px;
+    border-radius:18px;
+    color:white;
+    margin-bottom:25px;
+    box-shadow:0px 8px 25px rgba(0,0,0,.15);
+}
+
+.hero h1{
+    margin:0;
+    font-size:38px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+    color:#E5E7EB;
+}
+
+/* ------------------------------------------------ */
+/* Section Heading */
+/* ------------------------------------------------ */
+
+.section-title{
+    font-size:26px;
+    font-weight:700;
+    color:#1E3A8A;
+    margin-top:20px;
+    margin-bottom:15px;
+}
+
+/* ------------------------------------------------ */
+/* Metric Card */
+/* ------------------------------------------------ */
+
+.metric-card{
+    background:white;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+/* ===========================================
+   Dashboard Cards
+=========================================== */
+
+.info-card:hover{
+    transform:translateY(-3px);
+}
+
+.section-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+
+    margin-bottom:25px;
+}
+
+/* ===== Fix Streamlit Text Colors ===== */
+
+[data-testid="stAppViewContainer"]{
+    color:#1E293B;
+}
+
+[data-testid="stMetricValue"]{
+    color:#1E293B !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color:#1E3A8A !important;
+}
+
+[data-testid="stCaptionContainer"]{
+    color:#64748B !important;
+}
+
+/* ---------- Fix text inside cards ---------- */
+
+/* Card headings (XGBoost, FastAPI, etc.) */
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3,
+[data-testid="stMarkdownContainer"] h4 {
+    color: #1E293B !important;
+}
+
+/* Caption text (Algorithm, Backend, etc.) */
+[data-testid="stCaptionContainer"] {
+    color: #64748B !important;
+}
+
+/* Normal markdown text */
+[data-testid="stMarkdownContainer"] p {
+    color: #1E293B !important;
+}
+
+/* Sidebar text */
+section[data-testid="stSidebar"] * {
+    color: #F8FAFC !important;
+}
+
+/* Sidebar info box text */
+section[data-testid="stSidebar"] [data-testid="stAlert"] * {
+    color: inherit !important;
+}
