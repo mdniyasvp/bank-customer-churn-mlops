@@ -1,8 +1,16 @@
 services:
+
   fastapi:
     build:
       context: .
       dockerfile: docker/Dockerfile.api
+
+    container_name: bank-fastapi
+
+    ports:
+      - "8000:8000"
+
+    restart: unless-stopped
 
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
@@ -11,7 +19,32 @@ services:
       retries: 3
       start_period: 10s
 
+    networks:
+      - bank-network
+
   streamlit:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.streamlit
+
+    container_name: bank-streamlit
+
+    ports:
+      - "8501:8501"
+
+    environment:
+      API_URL: http://fastapi:8000/predict
+      PREDICTION_MODE: api
+
     depends_on:
       fastapi:
         condition: service_healthy
+
+    restart: unless-stopped
+
+    networks:
+      - bank-network
+
+networks:
+  bank-network:
+    driver: bridge

@@ -37,8 +37,6 @@ if css_file.exists():
 
 # API Configuration
 
-import os
-
 API_URL = os.getenv(
     "API_URL",
     "http://127.0.0.1:8000/predict"
@@ -54,7 +52,12 @@ def load_pipeline():
 
 
 pipeline = load_pipeline()
-
+# =====================================================
+# Prediction Workflow
+# =====================================================
+if "history" not in st.session_state:
+    st.session_state.history = []
+    
 # Sidebar
 
 render_sidebar()
@@ -110,11 +113,7 @@ with col4:
 
 submitted, payload, customer = render_customer_form()
 
-# =====================================================
-# Prediction Workflow
-# =====================================================
-if "history" not in st.session_state:
-    st.session_state.history = []
+
 if submitted:
 
     # -----------------------------------------
