@@ -48,6 +48,13 @@ jobs:
       - name: Run Tests
         run: uv run pytest -v
 
+      - name: Verify Docker Files
+        run: |
+          pwd
+          ls -la
+          ls -la docker
+          cat docker/Dockerfile.api
+
       - name: Build FastAPI Docker Image
         run: docker build -f docker/Dockerfile.api -t bank-churn-api .
 
