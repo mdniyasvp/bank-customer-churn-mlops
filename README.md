@@ -197,7 +197,7 @@ bank-customer-churn-mlops
 │   └── sidebar.py
 │
 ├── streamlit_app.py
-├── Dockerfile
+├── Dockerfile.railway           # Single-container Railway deployment
 ├── pyproject.toml
 ├── requirements.txt
 └── README.md
