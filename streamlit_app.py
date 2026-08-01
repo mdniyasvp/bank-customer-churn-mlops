@@ -1,11 +1,12 @@
 from pathlib import Path
+import os
 
 import joblib
 import streamlit as st
 
 from src.config.config import MODEL_DIR, MODEL_NAME
 
-from ui.api_client import predict_customer
+from ui.predictor import predict
 from ui.dashboard import show_dashboard
 from ui.forms import render_customer_form
 from ui.hero import render_hero
@@ -117,10 +118,10 @@ if "history" not in st.session_state:
 if submitted:
 
     # -----------------------------------------
-    # Call FastAPI
+    # Get Prediction (API or Local)
     # -----------------------------------------
 
-    result = predict_customer(
+    result = predict(
         API_URL,
         payload,
     )
