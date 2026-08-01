@@ -1,4 +1,4 @@
-# 🏦 Bank Customer Churn Prediction
+#  Bank Customer Churn Prediction
 <p align="center">
     <img src="assets/banner.png" alt="Bank Customer Churn Prediction Banner" width="100%">
 </p>
@@ -25,46 +25,49 @@ Predict whether a bank customer is likely to leave the bank using a production-r
 
 ---
 
-## 📌 Overview
+##  Live Demo
 
-This project demonstrates a complete **Machine Learning + MLOps** workflow for predicting customer churn in a banking environment.
+**Try the application here**
 
-The application allows users to enter customer information through an interactive **Streamlit** interface, sends the data to a **FastAPI** backend, and returns a real-time churn prediction using a trained **XGBoost** model.
+https://bank-customer-churn-mlops-c3hwzn7jwslkwljdzj3p8v.streamlit.app/
 
-The project follows a modular architecture and demonstrates production-oriented software engineering practices such as:
+---
 
-- Machine Learning Pipelines
-- FastAPI REST APIs
-- Streamlit Dashboard
+##  GitHub Repository
+
+https://github.com/mdniyasvp/bank-customer-churn-mlops
+
+---
+
+##  Overview
+
+This project is an end-to-end Machine Learning application that predicts whether a bank customer is likely to leave the bank (Customer Churn Prediction).
+
+Instead of focusing only on model training, this project demonstrates a complete production-style ML workflow including model training, experiment tracking, REST API development, containerization, CI/CD, and an interactive web application.
+
+---
+
+##  Features
+
+- End-to-End Machine Learning Pipeline
+- XGBoost Classifier
+- FastAPI REST API
+- Interactive Streamlit Dashboard
+- Prediction History
+- Business Recommendation Engine
+- Feature Importance Visualization
 - MLflow Experiment Tracking
 - DVC Dataset Versioning
-- Docker Containerization
-- Modular Project Structure
-- Git Version Control
+- Docker Support
+- Docker Compose Support
+- GitHub Actions CI
+- Modular Architecture
 
 ---
 
-## 🚀 Key Features
+#  Application Screenshots
 
-- 📊 Customer Churn Prediction
-- ⚡ FastAPI REST API
-- 🎨 Interactive Streamlit Dashboard
-- 📈 Churn Probability Gauge
-- 📋 Customer Summary Dashboard
-- 💡 Business Recommendation Engine
-- 📜 Prediction History
-- 📥 CSV Export
-- 📊 Feature Importance Visualization
-- 🧪 MLflow Experiment Tracking
-- 📂 DVC Dataset Versioning
-- 🐳 Docker Support
-- 🏗 Modular Project Architecture
-
----
-
-# 📸 Application Screenshots
-
-## 🏠 Home Page
+##  Home Page
 
 <p align="center">
   <img src="assets/screenshots/home.png" width="900">
@@ -72,7 +75,7 @@ The project follows a modular architecture and demonstrates production-oriented 
 
 ---
 
-## 📊 Prediction Dashboard
+##  Prediction Dashboard
 
 <p align="center">
   <img src="assets/screenshots/dashboard.png" width="900">
@@ -80,7 +83,7 @@ The project follows a modular architecture and demonstrates production-oriented 
 
 ---
 
-## 📜 Prediction History
+##  Prediction History
 
 <p align="center">
   <img src="assets/screenshots/history.png" width="900">
@@ -88,7 +91,7 @@ The project follows a modular architecture and demonstrates production-oriented 
 
 ---
 
-## 📖 FastAPI Swagger UI
+##  FastAPI Swagger UI
 
 <p align="center">
   <img src="assets/screenshots/swagger.png" width="900">
@@ -96,7 +99,7 @@ The project follows a modular architecture and demonstrates production-oriented 
 
 ---
 
-## 📈 MLflow Experiment Tracking
+##  MLflow Experiment Tracking
 
 <p align="center">
   <img src="assets/screenshots/mlflow.png" width="900">
@@ -104,7 +107,7 @@ The project follows a modular architecture and demonstrates production-oriented 
 
 ---
 
-# 🏗️ System Architecture
+#  System Architecture
 
 ```text
                     ┌────────────────────────────┐
@@ -148,7 +151,7 @@ The project follows a modular architecture and demonstrates production-oriented 
 
 ---
 
-# ⚙️ Tech Stack
+#  Tech Stack
 
 | Category | Technologies |
 |----------|--------------|
@@ -205,7 +208,7 @@ bank-customer-churn-mlops
 
 ---
 
-# 🤖 Model Performance
+#  Model Performance
 
 Three machine learning models were trained and compared using the same preprocessing pipeline.
 
@@ -215,13 +218,13 @@ Three machine learning models were trained and compared using the same preproces
 | Random Forest | 0.8584 | 0.7238 | 0.5349 | 0.6152 | 0.8740 | 6.61 s |
 | **XGBoost ⭐** | **0.8649** | **0.7405** | **0.5566** | **0.6355** | **0.8886** | **2.09 s** |
 
-### 🏆 Selected Production Model
+###  Selected Production Model
 
 The **XGBoost Classifier** was selected because it achieved the best overall performance across all evaluation metrics while maintaining a relatively low training time.
 
 ---
 
-# 🚀 Getting Started
+#  Getting Started
 
 ## Clone the Repository
 
@@ -279,7 +282,7 @@ http://localhost:8501
 
 ---
 
-# 🔌 API Documentation
+#  API Documentation
 
 ## Endpoint
 
@@ -316,7 +319,7 @@ POST /predict
 
 ---
 
-# 📦 Deployment
+#  Deployment
 
 The project is designed to support deployment using:
 
@@ -330,7 +333,7 @@ The project is designed to support deployment using:
 
 ---
 
-# 🔮 Future Improvements
+#  Future Improvements
 
 - Deploy Streamlit frontend to the cloud
 - Deploy FastAPI using a production cloud platform
@@ -348,7 +351,7 @@ The project is designed to support deployment using:
 
 **Muhammed Niyas V P**
 
-MSc Mathematics → Data Science & Machine Learning
+Data Science & Machine Learning
 
 GitHub:
 
