@@ -49,13 +49,7 @@ jobs:
         run: uv run pytest -v
 
       - name: Build FastAPI Docker Image
-        run: |
-          docker build \
-          -f docker/Dockerfile.api \
-          -t bank-churn-api .
+        run: docker build -f docker/Dockerfile.api -t bank-churn-api .
 
       - name: Build Streamlit Docker Image
-        run: |
-          docker build \
-          -f docker/Dockerfile.streamlit \
-          -t bank-churn-streamlit .
+        run: docker build -f docker/Dockerfile.streamlit -t bank-churn-streamlit .
